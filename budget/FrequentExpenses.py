@@ -1,6 +1,6 @@
 from . import Expense
 import collections
-import matplotlib.pyplot as plot
+import matplotlib.pyplot as plt
 
 
 def main():
@@ -10,18 +10,18 @@ def main():
     for expense in expenses.list:
         spending_categories.append(expense.category)
 
-    counter = collections.Counter(spending_categories)
+    spending_counter = collections.Counter(spending_categories)
     print(f"{len(spending_categories)} categories")
-    top5 = counter.most_common(5)
+    top5 = spending_counter.most_common(5)
     print(top5)
     categories, count = zip(*top5)
     print("")
     print(categories)
     print(count)
-    figure, axes = plot.subplots()
-    axes.bar(categories, count)
-    axes.set_title("# of Purchases by Category")
-    plot.show()
+    fig, ax = plt.subplots()
+    ax.bar(categories, count)
+    ax.set_title("# of Purchases by Category")
+    plt.show()
 
 
 if __name__ == "__main__":
