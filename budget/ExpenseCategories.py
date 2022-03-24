@@ -31,8 +31,8 @@ def main():
     check_sets(b, e)
     check_sets(c, f)
 
-    for x, y in zip(divided_for_loop, divided_set_comp):
-        if not (x.issubset(y) and x.issubset(y)):
+    for a, b in zip(divided_for_loop, divided_set_comp):
+        if not (a.issubset(b) and b.issubset(a)):
             print("Sets are NOT equal by subset test")
 
 
